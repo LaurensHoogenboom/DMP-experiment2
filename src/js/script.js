@@ -39,6 +39,15 @@ const scrollToFormTop = () => {
     $("#form-wrapper").animate({ scrollTop: 0 }, "slow");
 }
 
+$(document).on('click', '.description-button', function() {
+    const content = $(this).parent().find('.description-content');
+    $(content).toggleClass('hidden');
+});
+
+const showFormInputDescription = () => {
+
+}
+
 //helpers
 const makeid = (length) => {
     let result = '';

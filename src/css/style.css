@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+:root {
+    --border-color: rgb(220,220,220);
+    --shadow-color: rgba(0,0,0,0.1);
+    --shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
 .hidden {
     display: none;
 }
@@ -47,7 +53,7 @@ form label {
 
 textarea, input[type="number"] {
     border-radius: 10px;
-    border: 1px solid rgb(220,220,220);
+    border: 1px solid var(--border-color);
     padding: 10px 20px;
     resize: vertical;
 }
@@ -96,6 +102,46 @@ textarea {
     align-items: baseline;
 }
 
+/*form input description*/
+
+form label.has-description {
+    display: grid;
+    grid-template-columns: 1fr 20px;
+    position: relative;
+}
+
+form label.has-description .description-button {
+    display: block;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(51,51,51);
+    color: white;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 25px;
+}
+
+form label.has-description .description-content {
+    display: block;
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30px;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    z-index: 2;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: opacity 0.2s, top 0.2s;
+}
+
+form label.has-description .description-content.hidden {
+    top: 20px;
+    opacity: 0;
+    pointer-events: none;
+}
+
 /*global*/
 
 main {
@@ -114,7 +160,7 @@ main {
     padding: 50px;
     box-shadow: 0px 10px 30px rgb(0,0,0,0.10);
     max-width: 600px;   
-    border: 1px solid rgb(220,220,220);
+    border: 1px solid var(--border-color);
     max-height: calc(var(--vh, 1vh) * 100 - 100px);
     overflow: auto;
 }
@@ -131,7 +177,7 @@ main {
     padding: 20px 50px;
     position: sticky;
     bottom: -50px;
-    border-top: 1px solid rgb(220,220,220);
+    border-top: 1px solid var(--border-color);
 }
 
 #form-wrapper .actions .middle {
@@ -220,7 +266,7 @@ a.button {
 .moment-select-list .moment {
     background-color: rgb(245,245,245);
     border-radius: 10px;
-    border: 1px solid rgb(220,220,220);
+    border: 1px solid var(--border-color);
     padding: 10px 20px;
 }
 
@@ -232,7 +278,7 @@ a.button {
 
 .item-form {
     background-color: rgb(245,245,245);
-    border: 1px solid rgb(220,220,220);
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 20px;
 }
@@ -246,7 +292,7 @@ a.button {
     display: inline-block;
     padding-bottom: 20px;
     margin-bottom: 20px;
-    border-bottom: 1px solid rgb(220,220,220);
+    border-bottom: 1px solid var(--border-color);
 }
 
 

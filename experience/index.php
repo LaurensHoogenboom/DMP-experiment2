@@ -3,13 +3,13 @@
 ?>
 
 <div class="description">
-    <h1>Een Momentje...</h1>
+    <h1>Reflecteren op stress</h1>
     <p>
-        Een van de makkelijkste manieren om er achter te komen waar jij echt goed in bent, is het kijken naar jouw 'beste momenten'.
-        Als je vervolgens deze momenten uitpluist komt je, als het goed is uit, bij een speciale vaardigheid of sterke kant van jou als persoon.
+        Bij onze dagelijkse bezigheden ervaren we verschillende soorten druk. Dat is opzich niet erg. Stress heeft als functie dat we focussen en extra opletten.
+        Het moet alleen niet te veel worden. Dan is de kans groot dat we bijvoorbeeld juist blokkeren.
     </p>
     <p>
-        Onze eerste stap is dus een lijst te maken van jouw beste momenten. We gaan stap voor stap een aantal soorten momenten af.
+        Als we reflecteren op momenten waarin we gestrest waren of druk ervaren, kunnen we hier vaak wat leren over onszelf en onze omgeving.
     </p>
 </div>
 
@@ -19,7 +19,7 @@
 
 <div class="actions">
     <div class="left">
-        <a class="button big" href="/">Vorige</a>
+        <a class="button big" href="/intro_test.php">Vorige</a>
     </div>
 
     <div class="middle">
@@ -27,7 +27,7 @@
     </div>
 
     <div class="right">
-        <a class="button big" href="/experience/moments/joy.php">Volgende</a>
+        <a class="button big" href="/experience/pressure/inventarisation.php">Volgende</a>
     </div>
 </div>
 

@@ -30,7 +30,7 @@
     </div>
 
     <div class="middle">
-        <a class="button big" href="/experience/">Ik begrijp het</a>
+        <a class="button big" href="/experience/index.php">Ik begrijp het</a>
     </div>
 
     <div class="right">
