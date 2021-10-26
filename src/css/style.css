@@ -247,9 +247,9 @@ a.button {
     grid-gap: 20px;
 }
 
-.moment-list .moment, .select-list .item {
+.moment-list .moment, .select-list .item.with-progress {
     display: grid;
-    grid-template-columns: 1fr max-content;
+    grid-template-columns: 1fr 1fr max-content;
     grid-gap: 20px;
     width: 100%;
 }
@@ -269,6 +269,22 @@ a.button {
     border-radius: 10px;
     border: 1px solid var(--border-color);
     padding: 10px 20px;
+}
+
+.select-list .item {
+    display: grid;
+    grid-template-columns: 1fr 1fr max-content;
+    grid-gap: 20px;
+    width: 100%;
+}
+
+.select-list .item.with-progress {
+    grid-template-columns: 1fr minmax(50px, 1fr) max-content;
+}
+
+.select-list .item.with-progress progress {
+    width: 100%;
+    max-width: 150px;
 }
 
 .select-list .item p {

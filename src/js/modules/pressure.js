@@ -52,7 +52,7 @@ const loadPressureSelectList = (list) => {
         description = getPressureDescription(pressure.type);
 
         if (pressure.intensity > 1) {
-            addItemToSelectList(list, `${description}: ${pressure.intensity}`, pressure.selected, pressure.type);
+            addItemToSelectList(list, `${description}`, pressure.selected, pressure.type, pressure.intensity, 10);
         }
     });
 }

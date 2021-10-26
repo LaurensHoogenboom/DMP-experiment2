@@ -1,14 +1,3 @@
-/*
-experience = {
-    id: makeid(6),
-    description: moment,
-    action: "",
-    feeling: "",
-    thougt: "",
-    ending: ""
-}
-*/
-
 //initialize
 
 const initialize = () => {
@@ -125,16 +114,26 @@ window.addEventListener('resize', () => {
 
 //select list
 
-const addItemToSelectList = (list, value, selected, id) => {
+const addItemToSelectList = (list, value, selected, id, progress, maxValue) => {
+    const itemId = id ? id : makeid(6);
+
     $(list).append(
-        $('<label>').addClass('item').attr("id", id)
+        $('<label>').addClass('item').attr("id", itemId).attr("for", `${itemId}Checkbox`)
             .append(
                 $("<p>").text(value)
             )
             .append(
-                $("<input>").attr('type', 'checkbox').prop('checked', selected)
+                $("<input>").attr('type', 'checkbox').prop('checked', selected).attr("id", `${itemId}Checkbox`)
             )
     )
+
+    if (progress) {
+        $(`#${itemId}`).addClass('with-progress')
+
+        $(`#${itemId}`).find("input").before(
+            $("<progress>").attr("value", progress).attr("max", maxValue)
+        );
+    }
 }
 
 
