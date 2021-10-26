@@ -68,6 +68,7 @@ textarea {
     border-radius: 10px;
     color: white;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .radio-wrapper {
@@ -240,13 +241,13 @@ a.button {
 
 /*moment list*/
 
-.moment-list, .moment-list .list, .moment-select-list {
+.moment-list, .moment-list .list, .select-list {
     display: grid;
     width: 100%;
     grid-gap: 20px;
 }
 
-.moment-list .moment, .moment-select-list .moment {
+.moment-list .moment, .select-list .item {
     display: grid;
     grid-template-columns: 1fr max-content;
     grid-gap: 20px;
@@ -261,16 +262,16 @@ a.button {
     margin: 0 auto;
 }
 
-/*moment selection list*/
+/*selection list*/
 
-.moment-select-list .moment {
+.select-list .item {
     background-color: rgb(245,245,245);
     border-radius: 10px;
     border: 1px solid var(--border-color);
     padding: 10px 20px;
 }
 
-.moment-select-list .moment p {
+.select-list .item p {
     padding-bottom: 0;
 }
 

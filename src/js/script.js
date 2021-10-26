@@ -1,6 +1,3 @@
-//types
-const momentTypes = ["joy", "energy", "lost_time", "bending", "looking_forward", "selected"];
-
 /*
 experience = {
     id: makeid(6),
@@ -16,10 +13,20 @@ experience = {
 
 const initialize = () => {
     momentTypes.forEach(type => {
-        list = [];
         listName = `${type}Moments`;
-        localStorage.setItem(listName, JSON.stringify(list));
+        localStorage.setItem(listName, JSON.stringify([]));
     });
+
+    let pressureList = [];
+
+    pressureTypes.forEach(pType => {
+        const descriptionIndex = pressureDescriptions.findIndex(description => description.type == pType);
+        const description = pressureDescriptions[descriptionIndex].description;
+
+        pressureList.push({type: pType, intensity: 1, selected: false, description: description});
+    });
+
+    localStorage.setItem(pressureListStorageName, JSON.stringify(pressureList));
 }
 
 //form
@@ -39,14 +46,12 @@ const scrollToFormTop = () => {
     $("#form-wrapper").animate({ scrollTop: 0 }, "slow");
 }
 
+//form input description
+
 $(document).on('click', '.description-button', function() {
     const content = $(this).parent().find('.description-content');
     $(content).toggleClass('hidden');
 });
-
-const showFormInputDescription = () => {
-
-}
 
 //helpers
 const makeid = (length) => {
@@ -117,6 +122,20 @@ window.addEventListener('resize', () => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
+
+//select list
+
+const addItemToSelectList = (list, value, selected, id) => {
+    $(list).append(
+        $('<label>').addClass('item').attr("id", id)
+            .append(
+                $("<p>").text(value)
+            )
+            .append(
+                $("<input>").attr('type', 'checkbox').prop('checked', selected)
+            )
+    )
+}
 
 
 

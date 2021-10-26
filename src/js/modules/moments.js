@@ -20,20 +20,6 @@ $(document).on('click', '.moment-list #add-moment', function () {
     addMomentToList($(this).parent());
 });
 
-//moment select list
-
-const addMomentToSelectList = (list, value, selected) => {
-    $(list).append(
-        $('<label>').addClass('moment')
-            .append(
-                $("<p>").text(value)
-            )
-            .append(
-                $("<input>").attr('type', 'checkbox').prop('checked', selected)
-            )
-    )
-}
-
 //set moments
 
 const saveMoments = (type, list) => {

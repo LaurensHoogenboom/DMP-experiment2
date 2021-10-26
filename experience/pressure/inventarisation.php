@@ -11,7 +11,9 @@
 </div>
 
 <div class="content">
-    <form>
+    <form id="pressureForm">
+        <label class="form-status hidden"></label>
+
         <label class="has-description">
             Tijdsdruk
 
@@ -23,7 +25,7 @@
 
         <div class="range-wrapper">
             <label>1</label>
-            <input id="grade" type="range" min="1" max="10" value="1">
+            <input id="timePressure" type="range" min="1" max="10" value="1">
             <label>10</label>
         </div>
 
@@ -38,7 +40,7 @@
 
         <div class="range-wrapper">
             <label>1</label>
-            <input id="grade" type="range" min="1" max="10" value="1">
+            <input id="emotionPressure" type="range" min="1" max="10" value="1">
             <label>10</label>
         </div>
 
@@ -53,7 +55,7 @@
 
         <div class="range-wrapper">
             <label>1</label>
-            <input id="grade" type="range" min="1" max="10" value="1">
+            <input id="archievementPressure" type="range" min="1" max="10" value="1">
             <label>10</label>
         </div>
 
@@ -68,7 +70,7 @@
 
         <div class="range-wrapper">
             <label>1</label>
-            <input id="grade" type="range" min="1" max="10" value="1">
+            <input id="responsibilityPressure" type="range" min="1" max="10" value="1">
             <label>10</label>
         </div>
 
@@ -83,7 +85,7 @@
 
         <div class="range-wrapper">
             <label>1</label>
-            <input id="grade" type="range" min="1" max="10" value="1">
+            <input id="adjustmentPressure" type="range" min="1" max="10" value="1">
             <label>10</label>
         </div>
 
@@ -98,7 +100,7 @@
 
         <div class="range-wrapper">
             <label>1</label>
-            <input id="grade" type="range" min="1" max="10" value="1">
+            <input id="politicalPressure" type="range" min="1" max="10" value="1">
             <label>10</label>
         </div>
     </form>
@@ -114,9 +116,13 @@
     </div>
 
     <div class="right">
-        <a class="button big" href="/experience/pressure/combination.php">Volgende</a>
+        <a class="button big" href="/experience/pressure/combination.php" onclick="return savePressure()">Volgende</a>
     </div>
 </div>
+
+<script>
+    getPressure();
+</script>
 
 <?php 
     include $_SERVER['DOCUMENT_ROOT'] . "/src/php/footer.php"; 

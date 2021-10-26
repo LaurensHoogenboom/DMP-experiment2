@@ -8,8 +8,13 @@
     <title>Stress Reductie Inventarisatie Test</title>
 
     <script src="/src/js/jquery.js"></script>
+
+    <script src="/src/js/db/types.js"></script>
+    <script src="/src/js/db/constants.js"></script>
     <script src="/src/js/script.js"></script>
     
+    <script src="/src/js/modules/pressure.js"></script>
+
     <script src="/src/js/modules/moments.js"></script>
     <script src="/src/js/modules/experience.js"></script>
     <script src="/src/js/modules/personal_strength.js"></script>
