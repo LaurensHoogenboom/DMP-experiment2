@@ -50,7 +50,7 @@
     </div>
 
     <div class="right">
-        <a class="button big" href="/experience/moment/emotion.php"
+        <a class="button big" href="/experience/values/"
             onclick="return saveMomentEmotion('#emotion', '#emotionIntensity')">Volgende</a>
     </div>
 </div>
