@@ -10,7 +10,7 @@
     </p>
     <p>
         <i>
-            <span id="moment-description"></span>
+            "<span id="moment-description"></span>"
         </i>
     </p>
 </div>
