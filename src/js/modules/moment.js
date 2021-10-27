@@ -50,8 +50,10 @@ const saveMomentDescription = (textarea) => {
 const getMomentEmotion = (emotionInput, intensityInput) => {
     const moment = getMoment();
 
-    $(emotionInput).val(moment.emotion.type);
-    $(intensityInput).val(moment.emotion.intensity);
+    if (moment.emotion.type && moment.emotion.intensity > 0) {
+        $(emotionInput).val(moment.emotion.type);
+        $(intensityInput).val(moment.emotion.intensity);
+    }
 }
 
 const saveMomentEmotion = (emotionInput, intensityInput) => {

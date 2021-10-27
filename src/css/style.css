@@ -16,12 +16,12 @@
 
 /*text*/
 
-p, h1, h2, h3, button, input, label, a, i, textarea, input[type="number"] {
+p, h1, h2, h3, button, input, label, a, i, textarea, input[type="number"], select {
     font-family: sans-serif;
     color: rgb(51,51,51);
 }
 
-p, button, input, textarea {
+p, button, input, textarea, select {
     font-size: 16px;
     padding-bottom: 10px;
 }
@@ -108,15 +108,17 @@ textarea {
     align-items: baseline;
 }
 
-/*form input description*/
+/*input description*/
 
-form label.has-description {
+.has-description {
     display: grid;
     grid-template-columns: 1fr 20px;
     position: relative;
+    align-items: center;
+    grid-gap: 30px;
 }
 
-form label.has-description .description-button {
+.has-description .description-button {
     display: block;
     height: 25px;
     width: 25px;
@@ -125,11 +127,12 @@ form label.has-description .description-button {
     text-align: center;
     line-height: 25px;
     border-radius: 25px;
+    cursor: pointer;
 }
 
-form label.has-description .description-content {
+.has-description .description-content {
     display: block;
-    padding: 10px;
+    padding: 10px 20px;
     position: absolute;
     left: 0;
     right: 0;
@@ -142,7 +145,7 @@ form label.has-description .description-content {
     transition: opacity 0.2s, top 0.2s;
 }
 
-form label.has-description .description-content.hidden {
+.has-description .description-content.hidden {
     top: 20px;
     opacity: 0;
     pointer-events: none;
@@ -244,43 +247,23 @@ a.button {
     display: none;
 }
 
-/*moment list*/
-
-.moment-list, .moment-list .list, .select-list {
-    display: grid;
-    width: 100%;
-    grid-gap: 20px;
-}
-
-.moment-list .moment, .select-list .item.with-progress {
-    display: grid;
-    grid-template-columns: 1fr 1fr max-content;
-    grid-gap: 20px;
-    width: 100%;
-}
-
-.moment-list .moment .button {
-    align-self: flex-start;
-}
-
-.moment-list #add-moment {
-    margin: 0 auto;
-}
-
 /*selection list*/
 
+.select-list {
+    display: grid;
+    width: 100%;
+    grid-gap: 20px;
+}
+
 .select-list .item {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    grid-gap: 20px;
+    width: 100%;
     background-color: rgb(245,245,245);
     border-radius: 10px;
     border: 1px solid var(--border-color);
     padding: 10px 20px;
-}
-
-.select-list .item {
-    display: grid;
-    grid-template-columns: 1fr 1fr max-content;
-    grid-gap: 20px;
-    width: 100%;
 }
 
 .select-list .item.with-progress {

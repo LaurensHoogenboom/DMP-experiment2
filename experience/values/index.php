@@ -21,7 +21,7 @@
     </div>
 
     <div class="middle">
-        <a class="button big" href="/experience/moment/moment.php">Begin</a>
+        <a class="button big" href="/experience/values/concequences.php">Begin</a>
     </div>
 
     <div class="right">

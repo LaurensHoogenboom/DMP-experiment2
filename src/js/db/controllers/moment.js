@@ -39,7 +39,9 @@ const initializeMoment = () => {
             type: "",
             intensity: ""
         },
-        pressureList: selectedPressure
+        pressureList: selectedPressure,
+        concequenceList: [],
+        needList: []
     };
 
     setMoment(moment);

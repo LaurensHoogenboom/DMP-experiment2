@@ -1,21 +1,16 @@
 //initialize
 
 const initialize = () => {
-    momentTypes.forEach(type => {
-        listName = `${type}Moments`;
-        localStorage.setItem(listName, JSON.stringify([]));
-    });
-
     let pressureList = [];
 
     pressureTypes.forEach(pType => {
         const descriptionIndex = pressureDescriptions.findIndex(description => description.type == pType);
         const description = pressureDescriptions[descriptionIndex].description;
 
-        pressureList.push({type: pType, intensity: 1, selected: false, description: description});
+        pressureList.push({ type: pType, intensity: 1, selected: false, description: description });
     });
 
-    localStorage.setItem(pressureListStorageName, JSON.stringify(pressureList));
+    setPressureList(pressureList);
 }
 
 //form
@@ -37,7 +32,7 @@ const scrollToFormTop = () => {
 
 //form input description
 
-$(document).on('click', '.description-button', function() {
+$(document).on('click', '.description-button', function () {
     const content = $(this).parent().find('.description-content');
     $(content).toggleClass('hidden');
 });
@@ -56,6 +51,10 @@ const makeid = (length) => {
 
 const getBool = (string) => {
     return string == 'true' ? true : false;
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 //clean
@@ -86,14 +85,14 @@ const saveResult = () => {
         valuationList: valutionList,
         experienceList: saveExtensiveData ? experiences : null,
         personalStrengthList: saveExtensiveData ? personalStrengthList : null,
-        feedback: $("#feedback").val() 
+        feedback: $("#feedback").val()
     }
 
     $.ajax({
         url: '/src/php/save.php',
         method: 'POST',
-        data: {data: JSON.stringify(result)}
-    }).done(function(response) {
+        data: { data: JSON.stringify(result) }
+    }).done(function (response) {
         console.log(response);
     });
 
@@ -114,7 +113,7 @@ window.addEventListener('resize', () => {
 
 //select list
 
-const addItemToSelectList = (list, value, selected, id, progress, maxValue) => {
+const addItemToSelectList = (list, value, selected, id, progress, maxValue, description) => {
     const itemId = id ? id : makeid(6);
 
     $(list).append(
@@ -133,6 +132,20 @@ const addItemToSelectList = (list, value, selected, id, progress, maxValue) => {
         $(`#${itemId}`).find("input").before(
             $("<progress>").attr("value", progress).attr("max", maxValue)
         );
+    }
+
+    if (description) {
+        const descriptionId = makeid(6);
+
+        $(`#${itemId}`).wrap(`<div class='has-description' id='${descriptionId}''></div>`)
+
+        $(`#${descriptionId}`).append(
+            $("<label>").addClass("description-button").text("?").attr("for", descriptionId)
+        )
+
+        $(`#${itemId}`).append(
+            $("<label>").addClass("description-content").text(description).addClass('hidden').attr("id", descriptionId)
+        )
     }
 }
 
