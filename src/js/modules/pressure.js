@@ -7,7 +7,7 @@ const getPressureDescription = (pressureType) => {
 
 const getPressure = () => {
     hideFormError();
-    let pressureList = JSON.parse(localStorage.getItem(pressureListStorageName));
+    let pressureList = getPressureList();
 
     if (pressureList.length > 0) {
         pressureList.forEach(pressure => {
@@ -19,7 +19,7 @@ const getPressure = () => {
 //save pressure
 
 const savePressure = () => {
-    let pressureList = JSON.parse(localStorage.getItem(pressureListStorageName));
+    let pressureList = getPressureList();
     let hasPressure = false;
 
     pressureTypes.forEach(pType => {
@@ -33,7 +33,7 @@ const savePressure = () => {
         pressureList[index].intensity = intensity;
     });
 
-    localStorage.setItem(pressureListStorageName, JSON.stringify(pressureList));
+    setPressureList(pressureList);
 
     if (hasPressure) {
         return true;
@@ -46,7 +46,7 @@ const savePressure = () => {
 // populate pressure select list
 
 const loadPressureSelectList = (list) => {
-    const pressureList = JSON.parse(localStorage.getItem(pressureListStorageName));
+    const pressureList = getPressureList();
 
     pressureList.forEach(pressure => {
         description = getPressureDescription(pressure.type);
@@ -58,7 +58,7 @@ const loadPressureSelectList = (list) => {
 }
 
 const savePressureSelection = (list) => {
-    const pressureList = JSON.parse(localStorage.getItem(pressureListStorageName));
+    const pressureList = getPressureList();
 
     pressureList.forEach((p, index) => {
         pressureList[index].selected = false;
@@ -71,7 +71,12 @@ const savePressureSelection = (list) => {
         pressureList[itemIndex].selected = selected;
     });
 
-    localStorage.setItem(pressureListStorageName, JSON.stringify(pressureList));
+    setPressureList(pressureList);
+}
+
+const gotoMoment = (list) => {
+    savePressureSelection(list);
+    initializeMoment();
 }
 
 

@@ -31,7 +31,7 @@
     </div>
 
     <div class="right">
-        <a class="button big" href="/experience/moment/moment.php" onclick="return savePressureSelection('#select-pressure-combination')">Volgende</a>
+        <a class="button big" href="/experience/moment/moment.php" onclick="return gotoMoment('#select-pressure-combination')">Volgende</a>
     </div>
 </div>
 

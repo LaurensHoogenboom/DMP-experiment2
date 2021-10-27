@@ -1,43 +1,5 @@
-const initializeMoment = () => {
-    let pressureList = JSON.parse(localStorage.getItem(pressureListStorageName));
-    let selectedPressure = [];
-    let selectionCount = 0;
-
-    pressureList.forEach(p => {
-        if (p.selected) {
-            selectionCount++;
-        }
-    });
-
-    if (selectionCount > 0) {
-        pressureList.forEach(p => {
-            if (p.selected) {
-                selectedPressure.push(p);
-            }
-        });
-    } else {
-        pressureList.sort((a, b) => {
-            return b.intensity - a.intensity;
-        });
-
-        selectedPressure.push(pressureList[0]);
-    }
-
-    moment = {
-        id: makeid(5),
-        description: "",
-        emotion: {
-            type: "",
-            intensity: ""
-        },
-        pressureList: selectedPressure
-    };
-
-    localStorage.setItem(momentStorageName, JSON.stringify(moment));
-}
-
 const loadPressureSentence = (span) => {
-    const moment = JSON.parse(localStorage.getItem(momentStorageName));
+    const moment = getMoment();
     const pressureList = moment.pressureList;
     let sentence = "";
 
@@ -60,17 +22,54 @@ const loadPressureSentence = (span) => {
     $(span).text(sentence);
 }
 
+const getMomentDescription = (type, area) => {
+    const moment = getMoment();
+
+    if (type == "input") {
+        $(area).val(moment.description);
+    } else {
+        $(area).text(moment.description);
+    }
+}
+
 const saveMomentDescription = (textarea) => {
-    const moment = JSON.parse(localStorage.getItem(momentStorageName));
+    const moment = getMoment();
     hideFormError();
     description = $(textarea).val();
 
     if (description.length > 0) {
         moment.description = description;
-        localStorage.setItem(momentStorageName, JSON.stringify(moment));
+        setMoment(moment);
         return true;
     } else {
         showFormError("We hebben een beschrijving van het moment nodig, om door te gaan.");
+        return false;
+    }
+}
+
+const getMomentEmotion = (emotionInput, intensityInput) => {
+    const moment = getMoment();
+
+    $(emotionInput).val(moment.emotion.type);
+    $(intensityInput).val(moment.emotion.intensity);
+}
+
+const saveMomentEmotion = (emotionInput, intensityInput) => {
+    hideFormError();
+    const emotion = $(emotionInput).val();
+    const intensity = $(intensityInput).val();
+
+    if (emotion) {
+        let moment = getMoment();
+
+        moment.emotion.type = emotion;
+        moment.emotion.intensity = intensity;
+
+        setMoment(moment);
+
+        return true;
+    } else {
+        showFormError("Geef een emotie op, om door te gaan.");
         return false;
     }
 }

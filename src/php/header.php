@@ -12,6 +12,9 @@
     <script src="/src/js/db/types.js"></script>
     <script src="/src/js/db/constants.js"></script>
     <script src="/src/js/script.js"></script>
+
+    <script src="/src/js/db/controllers/pressure.js"></script>
+    <script src="/src/js/db/controllers/moment.js"></script>
     
     <script src="/src/js/modules/pressure.js"></script>
     <script src="/src/js/modules/moment.js"></script>

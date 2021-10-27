@@ -36,8 +36,8 @@
 </div>
 
 <script>
-    initializeMoment();
     loadPressureSentence("#pressure-sentence");
+    getMomentDescription("input", "#moment-description");
 </script>
 
 <?php 
