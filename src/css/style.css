@@ -63,12 +63,17 @@ textarea {
 }
 
 .form-status {
+    display: inline-block;
     padding: 10px 20px;
     background-color: rgb(232, 197, 71);
     border-radius: 10px;
     color: white;
     margin-bottom: 20px;
     width: 100%;
+}
+
+.form-status.hidden {
+    display: none;
 }
 
 .radio-wrapper {

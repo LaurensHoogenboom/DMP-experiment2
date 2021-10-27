@@ -1,4 +1,5 @@
 const pressureListStorageName = "pressureList";
+const momentStorageName = "momentToReflectOn";
 
 const pressureDescriptions = [
     { type: "time", description: "Tijdsdruk" },

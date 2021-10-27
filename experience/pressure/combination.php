@@ -11,11 +11,13 @@
         Als dit het geval is kan je nu meerdere soorten stress selecteren die bij elkaar horen.
     </p>
     <p>
-        Horen geen allen bijelkaar? Dan gaan we door met het type stress wat je opgaf als het meest intens.
+        Horen geen allen bijelkaar? Dan hoef je niks te selecteren. We gaan dan door op druk die jij op gaf als meest intens aanwezig.
     </p>
 </div>
 
 <div class="content">
+    <label class="form-status hidden"></label>
+
     <div class="select-list" id="select-pressure-combination"></div>
 </div>
 
@@ -29,7 +31,7 @@
     </div>
 
     <div class="right">
-        <a class="button big" onclick="return savePressureSelection('#select-pressure-combination')">Volgende</a>
+        <a class="button big" href="/experience/moment/moment.php" onclick="return savePressureSelection('#select-pressure-combination')">Volgende</a>
     </div>
 </div>
 
