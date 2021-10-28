@@ -43,7 +43,8 @@ const initializeMoment = () => {
         concequenceList: [],
         needList: [],
         instrumentalValueList: [],
-        terminalValueList: []
+        terminalValueList: [],
+        factorList: []
     };
 
     setMoment(moment);

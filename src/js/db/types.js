@@ -30,7 +30,7 @@ const concequenceTypes = [
 const needTypes = [
     {
         name: "physiological",
-        displayName: "lichamelijk",
+        displayName: "lichamelijk welzijn",
         concequenceTypes: ["physical"],
         description: "Eten, slaap, ontspanning, plezier, kleding."
     },
@@ -267,6 +267,55 @@ const values = [
         displayName: "moedig",
         valueDomainTypes: ["maturation"],
         type: "terminal"
+    },
+]
+
+// factors
+
+const factorTypes = ["opinions", "responsibility", "expectations"]
+
+const factors = [
+    {
+        name: "opinion-of-others",
+        displayName: "meningen van anderen",
+        type: "opinion",
+        description: "Meningen of verwachtingen van anderen, die gedrag of de situatie beïnvloeden."
+    },
+    {
+        name: "physical-health",
+        displayName: "ik was niet helemaal fit",
+        type: "responsibility",
+        description: "Je zet voor de situatie al niet lekker in je vel."
+    },
+    {
+        name: "mental-health",
+        displayName: "ik was al druk in mijn hoofd",
+        type: "responsibility",
+        description: "Je was voor de situatie al druk bezig in je hoofd."
+    },
+    {
+        name: "someone-else",
+        displayName: "iemand deed iets verkeerd",
+        type: "responsibility",
+        description: "Iemand deed iets, waardoor de situatie gespannen werd."
+    },
+    {
+        name: "not-working",
+        displayName: "iets werkte of lukte niet",
+        type: "responsibility",
+        description: "Er was bijvoorbeeld file, beamer deed het niet, of je kreeg iets niet voor elkaar."
+    },
+    {
+        name: "change",
+        displayName: "iets was veranderd",
+        type: "responsibility",
+        description: "Iets was of werkte anders dan je had verwacht."
+    },
+    {
+        name: "bad-expectation",
+        displayName: "slechte verwachtingen",
+        type: "expectations",
+        description: "De verwachting dat de situatie niet beter zou worden"
     },
 ]
 
