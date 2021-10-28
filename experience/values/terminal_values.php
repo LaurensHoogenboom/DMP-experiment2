@@ -3,16 +3,15 @@
 ?>
 
 <div class="description">
-    <h1>Hoe je iets doet.</h1>
+    <h1>Waarom je iets doet.</h1>
     <p>
         In de situatie die je eerder beschreef, had je behoeften aan <span id="need-sentence"></span>. 
     </p>
     <p>
-        Afhankelijk van een situatie kiezen we voor een manier waarop wij deze behoefte vervullen.
-        Dat noemen we intstrumentele waarden.
+        Behoeften zijn een uiting van wat we belangrijk vinden. Dit worden ook wel waarden genoemd.
     </p>
     <p>
-        Wat past volgens jouw het beste bij de situatie? (Kies er maximaal 3).
+        Wat past volgens jouw het beste bij de situatie? (Kies er maximaal 2).
     </p>
     <p>
         <i>
@@ -24,7 +23,7 @@
 <div class="content">
     <label class="form-status hidden"></label>
 
-    <div class="select-list" id="select-instrumental-values"></div>
+    <div class="select-list" id="select-terminal-values"></div>
 </div>
 
 <div class="actions">
@@ -36,14 +35,14 @@
     </div>
 
     <div class="right">
-        <a class="button big" onclick="return saveValuesSelection('#select-instrumental-values')">Volgende</a>
+        <a class="button big" onclick="return saveValuesSelection('#select-terminal-values')">Volgende</a>
     </div>
 </div>
 
 <script>
     getMomentDescription("text", "#moment-description");
     loadNeedsSentence("#need-sentence");
-    loadValueSelectList("instrumental", "#select-instrumental-values");
+    loadValueSelectList("terminal", "#select-terminal-values");
 </script>
 
 <?php 

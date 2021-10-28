@@ -184,7 +184,7 @@ const saveValuesSelection = (list) => {
     if (selectedValues.length > 0 && selectedValues.length < 3) {
         moment.valueList = selectedValues;
         setMoment(moment);
-        return false;
+        return true;
     } else {
         if (selectedValues.length > 2) {
             showFormError("Selecteer op zijn maximaal twee waarden.");
