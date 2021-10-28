@@ -28,9 +28,18 @@ const getRelevantNeeds = () => {
 //value domains
 
 const getRelevantValueDomains = () => {
+    const valueRelevanceClickCount = parseInt(localStorage.getItem(valueRelevanceClickCountStorageName));
     const moment = getMoment();
-    const needs = moment.needList;
+    let needs = moment.needList;
     let relevantDomains = [];
+
+    needs.sort((a, b) => {
+        return b.intensity - a.intensity;
+    });
+
+    if (valueRelevanceClickCount == 1) {
+        needs = [needs[0]];
+    }
 
     valueDomainTypes.forEach(domain => {
         let relevant = false;
@@ -51,7 +60,7 @@ const getRelevantValueDomains = () => {
     return relevantDomains;
 }
 
-//terminal or instrumental
+//values
 
 const getRelevantValues = (valueType) => {
     const relevantDomains = getRelevantValueDomains();

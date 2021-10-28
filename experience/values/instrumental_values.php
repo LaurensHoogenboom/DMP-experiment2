@@ -36,7 +36,7 @@
     </div>
 
     <div class="right">
-        <a class="button big" href="/experience/values/terminal_values.php" onclick="return saveValuesSelection('#select-instrumental-values')">Volgende</a>
+        <a class="button big" href="/experience/values/terminal_values.php" onclick="return saveValuesSelection('#select-instrumental-values', 'instrumental')">Volgende</a>
     </div>
 </div>
 

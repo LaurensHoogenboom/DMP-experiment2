@@ -10,7 +10,7 @@
     </p>
     <p>
         Op basis van je eerder keuzes, hebben we een aantal behoeften geselecteerd.
-        Welke passen volgens jouw bij de situatie (selecteer er maximaal 2)?
+        Hoe belangrijk waren de onderstaande behoeften voor jouw in de situatie (1 = niet belangrijk, 10 = van levensbelang)?
     </p>
     <p>
         <i>
@@ -22,7 +22,8 @@
 <div class="content">
     <label class="form-status hidden"></label>
 
-    <div class="select-list" id="select-needs"></div>
+    <form class="intensityList" id="needs-intensity">
+    </form>
 </div>
 
 <div class="actions">
@@ -34,13 +35,13 @@
     </div>
 
     <div class="right">
-        <a class="button big" href="/experience/values/instrumental_values.php" onclick="return saveNeedSelection('#select-needs')">Volgende</a>
+        <a class="button big" href="/experience/values/instrumental_values.php"  onclick="return saveNeedSelection('#needs-intensity')">Volgende</a>
     </div>
 </div>
 
 <script>
     getMomentDescription("text", "#moment-description");
-    loadNeedsList("#select-needs");
+    loadNeedRangeList("#needs-intensity");
 </script>
 
 <?php 

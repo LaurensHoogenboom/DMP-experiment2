@@ -55,24 +55,24 @@ const saveConcequenceSelection = (list) => {
 
 //needs
 
-const loadNeedsList = (list) => {
+const loadNeedRangeList = (list) => {
     const moment = getMoment();
-    const needs = getRelevantNeeds();
-    const selectedNeeds = moment.needList;
+    const relevantNeeds = getRelevantNeeds();
+    const momentNeeds = moment.needList;
 
-    needs.forEach(need => {
-        let selected = false;
+    relevantNeeds.forEach(need => {
+        let intensity = 1;
 
-        if (selectedNeeds.length > 0) {
-            selectedNeeds.forEach(selectedN => {
-                if (selectedN.name == need.name) {
-                    selected = true;
+        if (momentNeeds.length > 0) {
+            momentNeeds.forEach(momentNeed => {
+                if (momentNeed.name == need.name && momentNeed.intensity) {
+                    intensity = momentNeed.intensity;
                 }
             });
         }
 
         displayName = capitalizeFirstLetter(need.displayName);
-        addItemToSelectList(list, displayName, selected, need.name, null, null, need.description);
+        addItemToIntensityList(list, displayName, need.name, 1, 10, intensity, need.description);
     });
 }
 
@@ -80,30 +80,30 @@ const saveNeedSelection = (list) => {
     hideFormError();
     const moment = getMoment();
     let selectedNeeds = [];
+    let hasNeed = false;
 
-    $(list).find('.item').each(function() {
+    $(list).find('.range-wrapper').each(function() {
         const needType = $(this).attr("id");
-        const selected = $(this).find(("input[type='checkbox']")).is(":checked");
+        const needIntensity = $(this).find("input[type='range']").val();
         const relevantNeeds = getRelevantNeeds();
         const needIndex = relevantNeeds.findIndex(need => need.name == needType);
         const need = relevantNeeds[needIndex];
 
-        if (selected) {
-            selectedNeeds.push(need);
-        }
+        need.intensity = needIntensity;
+
+        if (need.intensity > 1) {
+            hasNeed = true;
+        } 
+
+        selectedNeeds.push(need);
     });
 
-    if (selectedNeeds.length > 0 && selectedNeeds.length < 3) {
+    if (hasNeed) {
         moment.needList = selectedNeeds;
         setMoment(moment);
         return true;
     } else {
-        if (selectedNeeds.length > 2) {
-            showFormError("Selecteer op zijn maximaal twee behoeften.");
-        } else {
-            showFormError("Selecteer op zijn minst één behoefte");
-        }
-        
+        showFormError("Geef op z'n minst een van de behoefte een cijfer, of ga terug en selecteer een ander type gevolg.");
         return false;
     }
 }
@@ -115,6 +115,7 @@ const checkIfAnyValuesOtherwiseRedirect = (valueType, url) => {
 
     if (relevantValues.length < 1) {
         window.location.replace(url);
+        return false;
     }
 }
 
@@ -134,7 +135,7 @@ const loadNeedsSentence = (span) => {
 
 const loadValueSelectList = (valueType, list) => {
     const moment = getMoment();
-    const selectedValues = moment.valueList;
+    const selectedValues = valueType == 'terminal' ? moment.terminalValueList : moment.instrumentalValueList;
     const relevantValues = getRelevantValues(valueType);
     const relevantSelectedValues = [];
 
@@ -162,19 +163,17 @@ const loadValueSelectList = (valueType, list) => {
     });
 }
 
-const saveValuesSelection = (list) => {
+const saveValuesSelection = (list, valueType) => {
     hideFormError()
     const moment = getMoment();
     let selectedValues = [];
 
     $(list).find(".item").each(function () {
-        const valueType = $(this).attr("id");
+        const valueName = $(this).attr("id");
         const selected = $(this).find("input[type='checkbox']").is(":checked");
-        const relevantValues = getRelevantValues("instrumental");
-        const valueIndex = relevantValues.findIndex(value => value.name == valueType);
+        const relevantValues = getRelevantValues(valueType);
+        const valueIndex = relevantValues.findIndex(value => value.name == valueName);
         const value = relevantValues[valueIndex];
-
-        console.log(relevantValues);
 
         if (selected) {
             selectedValues.push(value);
@@ -182,7 +181,13 @@ const saveValuesSelection = (list) => {
     });
 
     if (selectedValues.length > 0 && selectedValues.length < 3) {
-        moment.valueList = selectedValues;
+        if (valueType == "instrumental") {
+            moment.instrumentalValueList = selectedValues;
+        }
+        if (valueType == "terminal") {
+            moment.terminalValueList = selectedValues;
+        }
+
         setMoment(moment);
         return true;
     } else {

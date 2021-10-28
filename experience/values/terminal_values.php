@@ -28,14 +28,14 @@
 
 <div class="actions">
     <div class="left">
-        <a class="button big" href="/experience/values/needs.php">Vorige</a>
+        <a class="button big" href="/experience/values/instrumental_values.php" onclick="return checkIfAnyValuesOtherwiseRedirect('instrumental', '/experience/values/needs.php')">Vorige</a>
     </div>
 
     <div class="middle">
     </div>
 
     <div class="right">
-        <a class="button big" onclick="return saveValuesSelection('#select-terminal-values')">Volgende</a>
+        <a class="button big" onclick="return saveValuesSelection('#select-terminal-values', 'terminal')">Volgende</a>
     </div>
 </div>
 

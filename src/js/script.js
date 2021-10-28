@@ -11,6 +11,8 @@ const initialize = () => {
     });
 
     setPressureList(pressureList);
+
+    localStorage.setItem(valueRelevanceClickCountStorageName, 1);
 }
 
 //form
@@ -146,6 +148,43 @@ const addItemToSelectList = (list, value, selected, id, progress, maxValue, desc
         $(`#${itemId}`).append(
             $("<label>").addClass("description-content").text(description).addClass('hidden').attr("id", descriptionId)
         )
+    }
+}
+
+//intensity list
+
+const addItemToIntensityList = (list, label, id, minValue, maxValue, defaultValue, description) => {
+    const itemId = id ? id : makeid(6);
+    const labelId = `${itemId}-label`;
+
+    $(list).append(
+        $("<label>").text(label).attr("id", labelId)
+    )
+
+    $(list).append(
+        $("<div>").addClass("range-wrapper").attr("id", itemId)
+            .append(
+                $("<label>").text(minValue)
+            )
+            .append(
+                $("<input>").attr("type", "range").attr("min", minValue).attr("max", maxValue).attr("value", defaultValue)
+            )
+            .append(
+                $("<label>").text(maxValue)
+            )
+    )
+    if (description) {
+        const descriptionId = makeid(6);
+
+        $(`#${labelId}`).addClass("has-description");
+
+        $(`#${labelId}`)
+            .append(
+                $("<label>").addClass("description-button").text("?").attr("for", descriptionId)
+            )
+            .append(
+                $("<label>").addClass("description-content").text(description).addClass('hidden').attr("id", descriptionId)
+            )
     }
 }
 

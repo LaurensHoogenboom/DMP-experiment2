@@ -126,7 +126,7 @@ const values = [
     },
     {
         name: "national-security",
-        displayName: "landelijke veiligheid",
+        displayName: "publieke veiligheid",
         valueDomainTypes: ["safety"],
         type: "terminal"
     },
