@@ -160,7 +160,7 @@ const saveSubmission = (saveDataInput, feedbackTextfield) => {
         console.log(response);
     });
 
-    //cleanData();
+    cleanData();
 }
 
 

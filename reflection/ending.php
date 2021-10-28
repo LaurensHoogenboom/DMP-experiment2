@@ -38,7 +38,7 @@
     </div>
 
     <div class="middle">
-        <a class="button big" onclick="saveSubmission('#shareData', '#feedback')">Verzenden</a>
+        <a class="button big" href="http://www.laureato.nl/" onclick="saveSubmission('#shareData', '#feedback')">Verzenden</a>
     </div>
 
     <div class="right">

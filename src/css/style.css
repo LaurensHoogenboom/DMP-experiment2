@@ -134,8 +134,8 @@ textarea {
     padding: 10px 20px;
     position: absolute;
     left: 0;
-    right: 0;
-    top: 30px;
+    right: 50px;
+    top: 0px;
     background-color: white;
     border: 1px solid var(--border-color);
     z-index: 2;
@@ -148,6 +148,18 @@ textarea {
     top: 20px;
     opacity: 0;
     pointer-events: none;
+}
+
+@media only screen and (max-width: 480px) {
+    .has-description .description-content {
+        left: -30px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .has-description .description-content {
+        left: 0px;
+    }
 }
 
 /*global*/
@@ -276,6 +288,18 @@ a.button {
 
 .select-list .item p {
     padding-bottom: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .select-list .item.with-progress {
+        grid-template-columns: 1fr max-content;
+    }
+
+    .select-list .item.with-progress progress {
+        grid-column: 1 / 2;
+        grid-row: 2;
+        max-width: initial;
+    }
 }
 
 /*experience completion*/
