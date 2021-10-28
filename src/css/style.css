@@ -299,6 +299,14 @@ a.button {
     border-bottom: 1px solid var(--border-color);
 }
 
+/*load more*/
+.load-more {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 30px;
+}
+
 
 
 

@@ -3,7 +3,7 @@
 ?>
 
 <div class="description">
-    <h1>Gevolgen van...</h1>
+    <h1>Gevolgen voor...</h1>
     <p>
         Druk voel je vanwege bepaalde (mogelijke) gevolgen van of in een situatie.
         Wat voor soort concequentie had deze situatie vooral? (Kies er maximaal 2).

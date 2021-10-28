@@ -28,23 +28,24 @@ const getRelevantNeeds = () => {
 //value domains
 
 const getRelevantValueDomains = () => {
-    const valueRelevanceClickCount = parseInt(localStorage.getItem(valueRelevanceClickCountStorageName));
+    const valueRelevanceCount = parseInt(localStorage.getItem(valueRelevanceCountStorageName));
     const moment = getMoment();
-    let needs = moment.needList;
+    const needs = moment.needList;
+    const needsForEvaluation = [];
     let relevantDomains = [];
 
     needs.sort((a, b) => {
         return b.intensity - a.intensity;
     });
 
-    if (valueRelevanceClickCount == 1) {
-        needs = [needs[0]];
+    for (let i = 0; i < valueRelevanceCount; i++) {
+        needsForEvaluation.push(needs[i]);
     }
 
     valueDomainTypes.forEach(domain => {
         let relevant = false;
 
-        needs.forEach(need => {
+        needsForEvaluation.forEach(need => {
             domain.needTypes.forEach(needType => {
                 if (need.name == needType) {
                     relevant = true;

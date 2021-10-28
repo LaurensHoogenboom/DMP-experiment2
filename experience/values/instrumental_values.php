@@ -25,6 +25,10 @@
     <label class="form-status hidden"></label>
 
     <div class="select-list" id="select-instrumental-values"></div>
+
+    <div class="load-more">
+        <label class="button big" onclick="loadMoreValues('instrumental', '#select-instrumental-values')">Meer</label>
+    </div>
 </div>
 
 <div class="actions">

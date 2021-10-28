@@ -12,7 +12,8 @@ const initialize = () => {
 
     setPressureList(pressureList);
 
-    localStorage.setItem(valueRelevanceClickCountStorageName, 1);
+    localStorage.setItem(valueRelevanceClickCountStorageName, 0);
+    localStorage.setItem(valueRelevanceCountStorageName, 1);
 }
 
 //form

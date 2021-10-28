@@ -5,7 +5,7 @@
 <div class="description">
     <h1>Waarom je iets doet.</h1>
     <p>
-        In de situatie die je eerder beschreef, had je behoeften aan <span id="need-sentence"></span>. 
+        In de situatie die je eerder beschreef, had je behoeften aan <span id="need-sentence"></span>.
     </p>
     <p>
         Behoeften zijn een uiting van wat we belangrijk vinden. Dit worden ook wel waarden genoemd.
@@ -23,19 +23,25 @@
 <div class="content">
     <label class="form-status hidden"></label>
 
-    <div class="select-list" id="select-terminal-values"></div>
+    <div class="select-list" id="select-terminal-values">
+    </div>
+
+    <div class="load-more">
+        <label class="button big" onclick="loadMoreValues('terminal', '#select-terminal-values')">Meer</label>
+    </div>
 </div>
 
 <div class="actions">
     <div class="left">
-        <a class="button big" href="/experience/values/instrumental_values.php" onclick="return checkIfAnyValuesOtherwiseRedirect('instrumental', '/experience/values/needs.php')">Vorige</a>
+        <a class="button big" href="/experience/values/instrumental_values.php"
+            onclick="return checkIfAnyValuesOtherwiseRedirect('instrumental', '/experience/values/needs.php')">Vorige</a>
     </div>
 
     <div class="middle">
     </div>
 
     <div class="right">
-        <a class="button big" onclick="return saveValuesSelection('#select-terminal-values', 'terminal')">Volgende</a>
+        <a class="button big" href="/reflection/" onclick="return saveValuesSelection('#select-terminal-values', 'terminal')">Volgende</a>
     </div>
 </div>
 

@@ -44,7 +44,7 @@ const saveConcequenceSelection = (list) => {
         return true;
     } else {
         if (selectedConcequences.length > 2) {
-            showFormError("Selecteer op zijn maximaal twee soorten gevolgen van de situatie.");
+            showFormError("Selecteer maximaal twee soorten gevolgen van de situatie.");
         } else {
             showFormError("Selecteer op zijn minst één soort gevolg van de situatie.");
         }
@@ -113,10 +113,16 @@ const saveNeedSelection = (list) => {
 const checkIfAnyValuesOtherwiseRedirect = (valueType, url) => {
     const relevantValues = getRelevantValues(valueType);
 
+    localStorage.setItem(valueRelevanceCountStorageName, 1);
+
     if (relevantValues.length < 1) {
         window.location.replace(url);
         return false;
     }
+}
+
+const resetRelevanceCount = () => {
+    localStorage.setItem(valueRelevanceCountStorageName, 1);
 }
 
 const loadNeedsSentence = (span) => {
@@ -192,11 +198,25 @@ const saveValuesSelection = (list, valueType) => {
         return true;
     } else {
         if (selectedValues.length > 2) {
-            showFormError("Selecteer op zijn maximaal twee waarden.");
+            showFormError("Selecteer maximaal twee waarden.");
         } else {
             showFormError("Selecteer op zijn minst één waarde");
         }
         
         return false;
     }
+}
+
+const loadMoreValues = (valueType, list) => {
+    $(list).empty();
+
+    console.log(list);
+    console.log(valueType);
+
+    const relevanceClickCount = parseInt(localStorage.getItem(valueRelevanceClickCountStorageName)) + 1;
+    localStorage.setItem(valueRelevanceClickCountStorageName, relevanceClickCount);
+
+    localStorage.setItem(valueRelevanceCountStorageName, 2);
+
+    loadValueSelectList(valueType, list);
 }
