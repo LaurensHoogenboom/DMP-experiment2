@@ -3,67 +3,69 @@
 ?>
 
 <div class="description">
-    <h1>Resultaten</h1>
+    <h1>Hebben we 't begrepen... 🤔</h1>
     <p>
-        Beantwoord de vragen hieronder. De antwoorden dienen als beoordeling van de kwaliteit van de resultaten.
+        Als conclusie hebben we de volgende zin geformuleerd.
+        Geef alsjeblieft hieronder aan in hoeverre dit voor jouw de <i>hele</i> situatie dekt.
     </p>
 </div>
 
 <div class="content">
-    <form class="item-form">
-        <div class="item">
-            <h2>Wat je kunt: <span id="valuation-index"></span> van <span id="valuation-count"></span></h2>
+    <label class="form-status hidden"></label>
 
-            <p id="personal-strength-description">moment beschrijving</p>
+    <p>Ik zou in deze situatie:</p>
 
-            <label class="form-status hidden"></label>
+    <p>
+        <i>
+            &quot;<span id="situation"></span>&quot;
+        </i>
+    </p>
 
-            <label>Maak je al regelmatig gebruik van dit sterke punt? (bijv. bij hobby's, werk, studie etc.) *</label>
+    <p>...minder of geen van deze soorten druk voelen:</p>
 
-            <div class="radio-wrapper">
-                <input type="radio" id="used_yes" name="used" value="yes">
-                <label for="used_yes">Ja</label>
+    <div class="block-list" id="pressure"></div>
 
-                <span></span>
+    <p>...als er geen sprake is van:</p>
 
-                <input type="radio" id="used_no" name="used" value="no" checked>
-                <label for="used_no">Nee</label>
-            </div>
+    <div class="block-list" id="factors"></div>
 
-            <label>Zou je regelmatig gebruik van dit sterke punt willen maken? *</label>
+    <p>...zodat ik op de volgende manieren te werk kan gaan:</p>
 
-            <div class="radio-wrapper">
-                <input type="radio" id="wanted_yes" name="wantedToBeUsed" value="yes">
-                <label for="wanted_yes">Ja</label>
+    <div class="block-list" id="instrumental"></div>
 
-                <span></span>
-    
-                <input type="radio" id="wanted_no" name="wantedToBeUsed" value="no" checked>
-                <label for="wanted_no">Nee</label>
-            </div>
+    <p>...en ik in aan de dingen kan werken:</p>
 
-            <label>
-                Hoe belangrijk vind je dit sterke punt voor je? *
-            </label>
+    <div class="block-list" id="terminal"></div>
 
-            <div class="range-wrapper" >
-                <label>1</label>
-                <input id="grade" type="range" min="1" max="10" value="5">
-                <label>10</label>
-                <i class="range-description">(1 = niet belangrijk, 10 = heel belangrijk)</i>
-            </div>
+    <form class="valuation-form">
+        <label>Dekt deze zin de hele situatie? (1 = totaal niet, 10 = helemaal)</label>
 
-            <label>Nog andere opmerkingen</label>
-            <textarea id="remarks"></textarea>
+        <div class="range-wrapper">
+            <label>1</label>
+            <input type="range" id="coverageGrade" min="1" max="10" value="1">
+            <label>10</label>
         </div>
-        <label>* verplicht veld</label>
+
+        <label>Zou je nog toevoegen of veranderen?</label>
+        <textarea id="coverageRemarks"></textarea>
+
+        <label>Zou het weten van het bovenstaande je kunnen helpen in een toekomstige vergelijkbare situatie? (1 =
+            totaal niet, 10 = helemaal)</label>
+
+        <div class="range-wrapper">
+            <label>1</label>
+            <input type="range" id="usabilityGrade" min="1" max="10" value="1">
+            <label>10</label>
+        </div>
+
+        <label>Waarom wel of niet?</label>
+        <textarea id="usabilityRemarks"></textarea>
     </form>
 </div>
 
 <div class="actions">
     <div class="left">
-        <a class="button big" href="/outro/intro.php" for="submit_experience_form"
-            onclick="return previousValuation()">Vorige</a>
+        <a class="button big" href="/reflection/factors.php">Vorige</a>
     </div>
 
     <div class="middle">
@@ -71,13 +73,12 @@
     </div>
 
     <div class="right">
-        <a class="button big" href="/outro/feedback_data.php" for="submit_experience_form"
-            onclick="return nextValuation()">Volgende</a>
+        <a class="button big" onclick="return saveValuation('#coverageGrade', '#coverageRemarks', '#usabilityGrade', '#usabilityRemarks')">Volgende</a>
     </div>
 </div>
 
 <script>
-    getCurrentValuation();
+    loadEndSentence("#situation", "#pressure", "#factors", "#instrumental", "#terminal");
 </script>
 
 <?php 

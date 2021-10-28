@@ -44,7 +44,8 @@ const initializeMoment = () => {
         needList: [],
         instrumentalValueList: [],
         terminalValueList: [],
-        factorList: []
+        factorList: [],
+        valuation: ""
     };
 
     setMoment(moment);

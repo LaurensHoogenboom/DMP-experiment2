@@ -174,7 +174,7 @@ main {
 }
 
 #form-wrapper .description {
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
 }
 
 #form-wrapper .actions {
@@ -305,6 +305,29 @@ a.button {
     justify-content: center;
     width: 100%;
     padding-top: 30px;
+}
+
+/*block-list*/
+
+.block-list {
+    display: flex;
+    padding: 10px 0 0 0;
+}
+
+.block-list .block {
+    display: inline-block;
+    background-color: rgb(220,220,220);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 0 20px 20px 0px;
+}
+
+/*valuation form*/
+
+.valuation-form {
+    margin-top: 20px;
+    padding-top: 30px;
+    border-top: 1px solid rgb(220,220,220);
 }
 
 

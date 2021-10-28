@@ -213,13 +213,10 @@ const getEnumerationSentence = (list) => {
     return sentence;
 }
 
+//block-list
 
-
-
-
-
-
-
-
-
-
+const addItemToBlockList = (list, value) => {
+    $(list).append(
+        $("<label>").addClass("block").text(capitalizeFirstLetter(value))
+    );
+}

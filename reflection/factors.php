@@ -27,7 +27,7 @@
     </div>
 
     <div class="right">
-        <a class="button big" href="/reflection/true_or_false.php" onclick="return saveFactorSelectList('#factor-select-list')">Volgende</a>
+        <a class="button big" href="/reflection/valuation.php" onclick="return saveFactorSelectList('#factor-select-list')">Volgende</a>
     </div>
 </div>
 

@@ -1,3 +1,5 @@
+//factors
+
 const loadFactorSelectList = (list) => {
     const moment = getMoment();
     const momentFactors = moment.factorList;
@@ -49,3 +51,63 @@ const saveFactorSelectList = (list) => {
         return false;
     }
 }
+
+//valuation
+
+const loadEndSentence = (situationSpan, pressureWrapper, factorWrapper, instrumentalWrapper, terminalWrapper) => {
+    const moment = getMoment();
+    const situation = moment.description;
+    const pressureList = moment.pressureList;
+    const factorList = moment.factorList;
+    const needList = moment.needList;
+    const instrumentalValueList = moment.instrumentalValueList;
+    const terminalValueList = moment.terminalValueList;
+
+    $(situationSpan).text(situation);
+
+    pressureList.forEach(pressure => {
+        addItemToBlockList(pressureWrapper, pressure.description);
+    });
+
+    factorList.forEach(factor => {
+        addItemToBlockList(factorWrapper, factor.displayName);
+    });
+
+    if (instrumentalValueList.length > 0) {
+        instrumentalValueList.forEach(value => {
+            addItemToBlockList(instrumentalWrapper, value.displayName);
+        });
+    } else {
+        $(instrumentalWrapper).addClass("hidden");
+    }
+
+    if (terminalValueList.length > 0) {
+        terminalValueList.forEach(value => {
+            addItemToBlockList(terminalWrapper, value.displayName);
+        });
+    } else {
+        $(terminalWrapper).addClass("hidden");
+    }
+}
+
+const saveValuation = (coverageInput, coverageTextfield, usabilityInput, usabilityTextField) => {
+    const moment = getMoment();
+
+    const coverageGrade = $(coverageInput).val();
+    const coverageRemarks = $(coverageTextfield).val();
+    const usabilityGrade = $(usabilityInput).val()
+    const usabilityRemarks = $(usabilityTextField).val();
+
+    const valuation = {
+        coverageGrade: coverageGrade,
+        coverageRemarks: coverageRemarks,
+        usabilityGrade: usabilityGrade,
+        usabilityRemarks: usabilityRemarks
+    };
+
+    moment.valuation = valuation;
+    setMoment(moment);
+}
+
+
+
