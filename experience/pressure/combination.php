@@ -8,10 +8,10 @@
         Vaak worden verschillende soorten stress door eenzelfde situatie veroorzaakt.
     </p>
     <p>
-        Als dit het geval is kan je nu meerdere soorten stress selecteren die bij elkaar horen.
+        Als dit het geval is kan je nu meerdere soorten stress die bij elkaar horen selecteren.
     </p>
     <p>
-        Horen geen allen bijelkaar? Dan hoef je niks te selecteren. We gaan dan door op druk die jij op gaf als meest intens aanwezig.
+        Horen geen allen bij elkaar? Dan hoef je niks te selecteren. We gaan dan verder met druk die jij op gaf als meest intens aanwezig.
     </p>
 </div>
 

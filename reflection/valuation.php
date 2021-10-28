@@ -21,7 +21,7 @@
         </i>
     </p>
 
-    <p>...minder of geen van deze soorten druk voelen:</p>
+    <p>...minder of geen van deze soorten druk zou voelen:</p>
 
     <div class="block-list" id="pressure"></div>
 
@@ -29,7 +29,7 @@
 
     <div class="block-list" id="factors"></div>
 
-    <p>...dan zou ik...</p>
+    <p>...dan zou ik:</p>
 
     <p>...op de volgende manieren te werk kunnen gaan:</p>
 

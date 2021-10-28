@@ -8,7 +8,7 @@
         In de situatie die je eerder beschreef, had je behoeften aan <span id="need-sentence"></span>.
     </p>
     <p>
-        Behoeften zijn een uiting van wat we belangrijk vinden. Dit worden ook wel waarden genoemd.
+        Behoeften zijn een uiting van wat we belangrijk vinden. Dit worden ook wel eindwaarden genoemd.
     </p>
     <p>
         Wat past volgens jouw het beste bij de situatie? (Kies er maximaal 2).

@@ -3,7 +3,7 @@
 ?>
                
 <div class="description">
-    <h1>Hi! Leuk dat je mee wil helpen met dit onderzoek.</h1>
+    <h1>Hi! Leuk dat je mee wil helpen met dit onderzoek. 📃</h1>
     <p>
         Op het moment ben ik voor mijn studie bezig met een onderzoekje dat o.a. draait om werkdruk, reflectie en gedrag.
         Dit project focussed zich op mensen die na bijvoorbeeld een psycho-medisch traject weer 'op eigen benen gaan staan'.
