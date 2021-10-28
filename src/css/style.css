@@ -185,10 +185,6 @@ main {
     overflow: auto;
 }
 
-#form-wrapper .description {
-    /* padding-bottom: 20px; */
-}
-
 #form-wrapper .actions {
     display: grid;
     grid-template-columns: max-content 1fr max-content;
