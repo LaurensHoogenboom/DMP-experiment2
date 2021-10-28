@@ -5,9 +5,9 @@
 <div class="description">
     <h1>Omdat...</h1>
     <p>
-        Wat in de situatie zorgde ervoor dat je behoefte voor
+        Wat in de situatie zorgde ervoor dat jouw behoefte voor
         <i></r> <span id="need-sentence"></span></i> onder
-        druk kwam te staan? (Selecteer er maximaal 2).
+        druk kwam te staan? (Selecteer er maximaal 3).
     </p>
 </div>
 

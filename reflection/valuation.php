@@ -13,7 +13,7 @@
 <div class="content">
     <label class="form-status hidden"></label>
 
-    <p>Ik zou in deze situatie:</p>
+    <p>Als ik in deze situatie:</p>
 
     <p>
         <i>
@@ -25,15 +25,17 @@
 
     <div class="block-list" id="pressure"></div>
 
-    <p>...als er geen sprake is van:</p>
+    <p>...en er geen sprake is van:</p>
 
     <div class="block-list" id="factors"></div>
 
-    <p>...zodat ik op de volgende manieren te werk kan gaan:</p>
+    <p>...dan zou ik...</p>
+
+    <p>...op de volgende manieren te werk kunnen gaan:</p>
 
     <div class="block-list" id="instrumental"></div>
 
-    <p>...en ik in aan de dingen kan werken:</p>
+    <p>...en aan deze dingen kunnen werken:</p>
 
     <div class="block-list" id="terminal"></div>
 
@@ -46,7 +48,7 @@
             <label>10</label>
         </div>
 
-        <label>Zou je nog toevoegen of veranderen?</label>
+        <label>Zou je nog wat willen toevoegen of veranderen?</label>
         <textarea id="coverageRemarks"></textarea>
 
         <label>Zou het weten van het bovenstaande je kunnen helpen in een toekomstige vergelijkbare situatie? (1 =
@@ -73,12 +75,13 @@
     </div>
 
     <div class="right">
-        <a class="button big" onclick="return saveValuation('#coverageGrade', '#coverageRemarks', '#usabilityGrade', '#usabilityRemarks')">Volgende</a>
+        <a class="button big" href="/reflection/ending.php" onclick="return saveValuation('#coverageGrade', '#coverageRemarks', '#usabilityGrade', '#usabilityRemarks')">Volgende</a>
     </div>
 </div>
 
 <script>
     loadEndSentence("#situation", "#pressure", "#factors", "#instrumental", "#terminal");
+    loadValuation('#coverageGrade', '#coverageRemarks', '#usabilityGrade', '#usabilityRemarks');
 </script>
 
 <?php 

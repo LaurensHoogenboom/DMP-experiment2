@@ -14,7 +14,7 @@
         Wat zit hier achter?
     </p>
     <p>
-        Geen zorgen. Dit reflectie zelf zit niet in deze test.
+        Geen zorgen: de reflectie zelf zit niet in deze test.
     </p>
     <p>
         Bijna klaar... 😅

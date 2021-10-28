@@ -37,12 +37,12 @@ const saveFactorSelectList = (list) => {
         }
     });
 
-    if (selectedFactors.length < 3 && selectedFactors.length > 0) {
+    if (selectedFactors.length < 4 && selectedFactors.length > 0) {
         moment.factorList = selectedFactors;
         setMoment(moment);
         return true;
     } else {
-        if (selectedFactors.length > 2) {
+        if (selectedFactors.length > 3) {
             showFormError("Selecteer maximaal twee redenen.");
         } else {
             showFormError("Selecteer minstens één reden.");
@@ -90,6 +90,18 @@ const loadEndSentence = (situationSpan, pressureWrapper, factorWrapper, instrume
     }
 }
 
+const loadValuation = (coverageInput, coverageTextfield, usabilityInput, usabilityTextField) => {
+    const moment = getMoment();
+    const valuation = moment.valuation;
+
+    if (valuation) {
+        $(coverageInput).val(valuation.coverageGrade);
+        $(coverageTextfield).val(valuation.coverageRemarks);
+        $(usabilityInput).val(valuation.usabilityGrade)
+        $(usabilityTextField).val(valuation.usabilityRemarks);
+    }
+}
+
 const saveValuation = (coverageInput, coverageTextfield, usabilityInput, usabilityTextField) => {
     const moment = getMoment();
 
@@ -108,6 +120,49 @@ const saveValuation = (coverageInput, coverageTextfield, usabilityInput, usabili
     moment.valuation = valuation;
     setMoment(moment);
 }
+
+//submission
+
+const saveSubmission = (saveDataInput, feedbackTextfield) => {
+    const moment = getMoment();
+    const saveMomentDescription = $(saveDataInput).is(':checked');
+    const clickCount = parseInt(localStorage.getItem(valueRelevanceClickCountStorageName));
+    const feedback = $(feedbackTextfield).val();
+    
+    if (!saveMomentDescription) {
+        moment.description = "";
+    }
+
+    const result = {
+        moment: moment.description,
+        emotion: moment.emotion,
+        pressureList: moment.pressureList,
+        concequenceList: moment.concequenceList,
+        needList: moment.needList,
+        instrumentalValueList: moment.instrumentalValueList,
+        terminalValueList: moment.terminalValueList,
+        factorList: moment.factorList,
+        coverageGrade: moment.valuation.coverageGrade,
+        coverageRemarks: moment.valuation.coverageRemarks,
+        usabilityGrade: moment.valuation.usabilityGrade,
+        usabilityRemarks: moment.valuation.usabilityRemarks,
+        feedback: feedback,
+        moreValuesClickCount: clickCount
+    }
+
+    console.log(result);
+
+    $.ajax({
+        url: '/src/php/save.php',
+        method: 'POST',
+        data: { data: JSON.stringify(result) }
+    }).done(function (response) {
+        console.log(response);
+    });
+
+    //cleanData();
+}
+
 
 
 

@@ -60,48 +60,6 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-//clean
-
-const cleanData = () => {
-    localStorage.clear();
-}
-
-//save result
-
-const saveResult = () => {
-    const personalStrengthList = JSON.parse(localStorage.getItem('personalStrengthList'));
-    const experiences = JSON.parse(localStorage.getItem('experienceList'));
-    const saveExtensiveData = $('#shareData').is(':checked');
-
-    const valutionList = [];
-
-    personalStrengthList.forEach(personalStrength => {
-        valutionList.push({
-            wantedToBeUsed: personalStrength.wantedToBeUsed,
-            usedRegularly: personalStrength.usedRegularly,
-            grade: personalStrength.grade,
-            remarks: personalStrength.remarks
-        });
-    });
-
-    const result = {
-        valuationList: valutionList,
-        experienceList: saveExtensiveData ? experiences : null,
-        personalStrengthList: saveExtensiveData ? personalStrengthList : null,
-        feedback: $("#feedback").val()
-    }
-
-    $.ajax({
-        url: '/src/php/save.php',
-        method: 'POST',
-        data: { data: JSON.stringify(result) }
-    }).done(function (response) {
-        console.log(response);
-    });
-
-    cleanData();
-}
-
 //set dynamic viewheight
 
 $(document).ready(function () {
@@ -219,4 +177,10 @@ const addItemToBlockList = (list, value) => {
     $(list).append(
         $("<label>").addClass("block").text(capitalizeFirstLetter(value))
     );
+}
+
+//clean
+
+const cleanData = () => {
+    localStorage.clear();
 }

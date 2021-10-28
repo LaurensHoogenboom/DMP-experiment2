@@ -7,7 +7,7 @@ const pressureDescriptions = [
     { type: "time", description: "Tijdsdruk" },
     { type: "emotion", description: "Emotionele druk" },
     { type: "archievement", description: "Prestatie druk" },
-    { type: "responsibility", description: "Verandwoordelijkheidsgevoel" },
+    { type: "responsibility", description: "Verantwoordelijkheidsgevoel" },
     { type: "adjustment", description: "Aanpassingsdruk" },
     { type: "political", description: "Politieke druk" }
 ];
