@@ -41,7 +41,8 @@ const initializeMoment = () => {
         },
         pressureList: selectedPressure,
         concequenceList: [],
-        needList: []
+        needList: [],
+        valueList: []
     };
 
     setMoment(moment);

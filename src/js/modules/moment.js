@@ -1,24 +1,14 @@
 const loadPressureSentence = (span) => {
     const moment = getMoment();
     const pressureList = moment.pressureList;
-    let sentence = "";
+    const pressureWordList = [];
 
-    if (pressureList.length > 1) {
-        pressureList.forEach((p, index) => {
-            let description = p.description.toLowerCase();
+    pressureList.forEach(pressure => {
+        pressureWordList.push(pressure.description);
+    });
 
-            if (index == 0) {
-                sentence = description;
-            } else if (index == pressureList.length - 1) {
-                sentence = sentence + " en " + description;
-            } else {
-                sentence = sentence + ", " + description;
-            }
-        });
-    } else {
-        sentence = pressureList[0].description;
-    }
-
+    const sentence = getEnumerationSentence(pressureWordList);
+    
     $(span).text(sentence);
 }
 

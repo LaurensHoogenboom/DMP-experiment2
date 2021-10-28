@@ -114,7 +114,6 @@ textarea {
     display: grid;
     grid-template-columns: 1fr 20px;
     position: relative;
-    align-items: center;
     grid-gap: 30px;
 }
 

@@ -149,6 +149,30 @@ const addItemToSelectList = (list, value, selected, id, progress, maxValue, desc
     }
 }
 
+//opsomming
+
+const getEnumerationSentence = (list) => {
+    let sentence = "";
+
+    if (list.length > 1) {
+        list.forEach((item, index) => {
+            let description = item.toLowerCase();
+
+            if (index == 0) {
+                sentence = description;
+            } else if (index == list.length - 1) {
+                sentence = sentence + " en " + description;
+            } else {
+                sentence = sentence + ", " + description;
+            }
+        });
+    } else {
+        sentence = list[0].toLowerCase();
+    }
+
+    return sentence;
+}
+
 
 
 

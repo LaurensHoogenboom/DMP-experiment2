@@ -55,31 +55,6 @@ const saveConcequenceSelection = (list) => {
 
 //needs
 
-const getRelevantNeeds = () => {
-    const moment = getMoment();
-    const totalNeedsList = needTypes;
-    const selectedConcequences = moment.concequenceList;
-    const needsInContext = [];
-
-    totalNeedsList.forEach(need => {
-        let relevant = false;
-
-        need.concequenceTypes.forEach(type => {
-            selectedConcequences.forEach(concequence => {
-                if (type == concequence.name) {
-                    relevant = true;
-                }
-            });
-        });
-
-        if (relevant) {
-            needsInContext.push(need);
-        }   
-    });
-
-    return needsInContext;
-}
-
 const loadNeedsList = (list) => {
     const moment = getMoment();
     const needs = getRelevantNeeds();
@@ -121,7 +96,7 @@ const saveNeedSelection = (list) => {
     if (selectedNeeds.length > 0 && selectedNeeds.length < 3) {
         moment.needList = selectedNeeds;
         setMoment(moment);
-        return false;
+        return true;
     } else {
         if (selectedNeeds.length > 2) {
             showFormError("Selecteer op zijn maximaal twee behoeften.");
@@ -133,57 +108,90 @@ const saveNeedSelection = (list) => {
     }
 }
 
-//value domains
+//values
 
-const getRelevantValueDomains = () => {
+const checkIfAnyValuesOtherwiseRedirect = (valueType, url) => {
+    const relevantValues = getRelevantValues(valueType);
+
+    if (relevantValues.length < 1) {
+        window.location.replace(url);
+    }
+}
+
+const loadNeedsSentence = (span) => {
     const moment = getMoment();
     const needs = moment.needList;
-    let relevantDomains = [];
+    const needWordList = [];
 
-    valueDomainTypes.forEach(domain => {
-        let relevant = false;
+    needs.forEach(need => {
+        needWordList.push(need.displayName);
+    });
 
-        needs.forEach(need => {
-            domain.needTypes.forEach(needType => {
-                if (need.name == needType) {
-                    relevant = true;
+    const sentence = getEnumerationSentence(needWordList);
+
+    $(span).text(sentence);
+}
+
+const loadValueSelectList = (valueType, list) => {
+    const moment = getMoment();
+    const selectedValues = moment.valueList;
+    const relevantValues = getRelevantValues(valueType);
+    const relevantSelectedValues = [];
+
+    if (selectedValues.length > 0) {
+        selectedValues.forEach(value => {
+            if (value.type == valueType) {
+                relevantSelectedValues.push(value);
+            }
+        });
+    }
+
+    relevantValues.forEach(rValue => {
+        let selected = false;
+
+        if (relevantSelectedValues.length > 0) {
+            relevantSelectedValues.forEach(sValue => {
+                if (rValue.name == sValue.name) {
+                    selected = true;
                 }
             });
-        });
+        }
 
-        if (relevant) {
-            relevantDomains.push(domain);
+        description = capitalizeFirstLetter(rValue.displayName);
+        addItemToSelectList(list, description, selected, rValue.name, null, null);
+    });
+}
+
+const saveValuesSelection = (list) => {
+    hideFormError()
+    const moment = getMoment();
+    let selectedValues = [];
+
+    $(list).find(".item").each(function () {
+        const valueType = $(this).attr("id");
+        const selected = $(this).find("input[type='checkbox']").is(":checked");
+        const relevantValues = getRelevantValues("instrumental");
+        const valueIndex = relevantValues.findIndex(value => value.name == valueType);
+        const value = relevantValues[valueIndex];
+
+        console.log(relevantValues);
+
+        if (selected) {
+            selectedValues.push(value);
         }
     });
 
-    return relevantDomains;
-}
-
-//terminal or instrumental
-
-const getRelevantValues = (valueType) => {
-    const relevantDomains = getRelevantValueDomains();
-    let relevantInstrumentalValues = [];
-    
-    values.forEach(value => {
-        let relevant = false;
-
-        if (value.type == valueType) {
-            relevantDomains.forEach(relevantDomain => {
-                value.valueDomainTypes.forEach(domainType => {
-                    if (relevantDomain.name == domainType) {
-                        relevant = true;
-                    }
-                });
-            });
+    if (selectedValues.length > 0 && selectedValues.length < 3) {
+        moment.valueList = selectedValues;
+        setMoment(moment);
+        return false;
+    } else {
+        if (selectedValues.length > 2) {
+            showFormError("Selecteer op zijn maximaal twee waarden.");
+        } else {
+            showFormError("Selecteer op zijn minst één waarde");
         }
-
-        if (relevant) {
-            relevantInstrumentalValues.push(value);
-        }
-    });
-
-    return relevantInstrumentalValues;
+        
+        return false;
+    }
 }
-
-

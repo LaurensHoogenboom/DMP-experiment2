@@ -15,10 +15,12 @@
 
     <script src="/src/js/db/controllers/pressure.js"></script>
     <script src="/src/js/db/controllers/moment.js"></script>
+    <script src="/src/js/db/controllers/relevant.js"></script>
     
     <script src="/src/js/modules/pressure.js"></script>
     <script src="/src/js/modules/moment.js"></script>
     <script src="/src/js/modules/values.js"></script>
+    
 </head>
 <body>
     <main>

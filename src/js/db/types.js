@@ -54,7 +54,7 @@ const needTypes = [
     },
     {
         name: "self-actualization",
-        displayName: "najagen van dromen en doelen, zingeving",
+        displayName: "najagen van dromen en doelen, en/of zingeving",
         concequenceTypes: ["cognitive", "fullfillment"],
         description: "Studie, werk, doelen, ethish handelen, problemen oplossen, jezelf zijn"
     },

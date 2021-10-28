@@ -34,7 +34,7 @@
     </div>
 
     <div class="right">
-        <a class="button big" href="/experience/moment/moment.php" onclick="return saveNeedSelection('#select-needs')">Volgende</a>
+        <a class="button big" href="/experience/values/instrumental_values.php" onclick="return saveNeedSelection('#select-needs')">Volgende</a>
     </div>
 </div>
 
