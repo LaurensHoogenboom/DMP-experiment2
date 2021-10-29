@@ -10,7 +10,7 @@
     </p>
     <p>
         Vaak heeft deze doelgroep maar een beperkte draagkracht, waardoor ze keuzes moeten maken in wat wel en niet kan.
-        Het maken van deze keuzes is lastig. Daarvoor moet je weten wat je écht belangrijk voor je is, waar je goed in bent en wat jouw beïnvloedt bij het maken van je keuzes.
+        Het maken van deze keuzes is lastig. Daarvoor moet je weten wat je écht belangrijk voor je is, waar je goed in bent en wat jou beïnvloedt bij het maken van je keuzes.
     </p>
 </div>
 

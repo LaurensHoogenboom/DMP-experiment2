@@ -5,7 +5,7 @@
 <div class="description">
     <h1>Reflecteren op stress</h1>
     <p>
-        Bij onze dagelijkse bezigheden ervaren we verschillende soorten druk. Dat is opzich zelf genomen niet erg. Stress heeft als functie dat we extra goed opletten.
+        Bij onze dagelijkse bezigheden ervaren we verschillende soorten druk. Dat is op zichzelf genomen niet erg. Stress heeft als functie dat we extra goed opletten.
         Stress moet alleen niet te lang aanhouden. Dan is de kans groot dat we bijvoorbeeld juist blokkeren.
     </p>
     <p>

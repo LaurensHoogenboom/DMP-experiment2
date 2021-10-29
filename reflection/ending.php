@@ -5,7 +5,7 @@
 <div class="description">
     <h1>Klaar! 🎉</h1>
     <p>
-        Ontzettend bedankt dat je deze hele test hebt willen maken. Je helpt me daar gewerldig mee
+        Ontzettend bedankt dat je deze hele test hebt willen maken. Je helpt me daar geweldig mee
         voor het onderzoek. 
     </p>
     <p>

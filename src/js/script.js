@@ -37,6 +37,10 @@ const scrollToFormTop = () => {
 
 $(document).on('click', '.description-button', function () {
     const content = $(this).parent().find('.description-content');
+    const oldText = $(this).text();
+    const newText = oldText == "?" ? "x" : "?";
+
+    $(this).text(newText);
     $(content).toggleClass('hidden');
 });
 
