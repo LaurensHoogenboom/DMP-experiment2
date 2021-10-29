@@ -5,7 +5,7 @@
 <div class="description">
     <h1>Concequenties, behoeften en waarden.</h1>
     <p>
-        Waarom die vragen over het moment? Als we een moment jij een bepaalde druk ervaart goed onderzoeken,
+        Waarom die vragen over het moment? Als we een moment, waarop jij een bepaalde druk ervaart goed onderzoeken,
         komen we vanzelf uit op waar je naar streefde in dat moment, en hoe je werd beïnvloed.
         Er bestaat dus een direct verband tussen concequenties (mogelijke gevolgen van een situatie), behoeften, en normen en/of waarden.
     </p>

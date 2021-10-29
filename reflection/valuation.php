@@ -40,7 +40,7 @@
     <div class="block-list" id="terminal"></div>
 
     <form class="valuation-form">
-        <label>Dekt deze zin de hele situatie? (1 = totaal niet, 10 = helemaal)</label>
+        <label>Beschrijft deze zin de hele situatie? (1 = totaal niet, 10 = helemaal)</label>
 
         <div class="range-wrapper">
             <label>1</label>

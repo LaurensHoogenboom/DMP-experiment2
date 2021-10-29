@@ -9,7 +9,7 @@
     </p>
     <p>
         Eerder is er al een test geweest die draaide om vaardigheden en sterke eigenschappen. Mocht je geïntresseerd zijn, dan kun je die <a target="_blank" href="https://dmp-test.laureato.nl/">hier</a> vinden.
-        Deze nieuwe test draait om waar mensen naar streven en hoe ze beïnvloed worden.
+        Deze nieuwe test draait om datgene waar mensen naar streven en hoe ze op de weg daarheen beïnvloed worden.
     </p>
 </div>
 

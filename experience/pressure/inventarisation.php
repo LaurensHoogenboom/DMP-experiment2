@@ -60,7 +60,7 @@
         </div>
 
         <label class="has-description">
-            Verantwoordingsgevoel
+            Verantwoordelijkheidsgevoel
 
             <span class="description-button">?</span>
             <span class="description-content hidden">

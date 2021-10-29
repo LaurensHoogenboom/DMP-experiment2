@@ -6,7 +6,7 @@
     <h1>Gevolgen voor...</h1>
     <p>
         Druk voel je vanwege bepaalde (mogelijke) gevolgen van of in een situatie.
-        Wat voor soort concequentie had deze situatie vooral? (Kies er maximaal 2).
+        Wat voor soort consequentie had deze situatie vooral? (Kies er maximaal 2).
     </p>
     <p>
         <i>

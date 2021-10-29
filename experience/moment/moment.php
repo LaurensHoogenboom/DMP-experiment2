@@ -8,7 +8,7 @@
         Door welk moment ervaarde je deze <span id="pressure-sentence"></span>?
     </p>
     <p>
-        Het hoeft net altijd een specifiek moment te zijn. Het kan ook zijn dat een bepaalde periode of proces voor bepaalde druk zorgt.
+        Het hoeft niet altijd een specifiek moment te zijn. Het kan ook zijn dat een bepaalde periode of proces voor bepaalde druk zorgt.
     </p>
 </div>
 

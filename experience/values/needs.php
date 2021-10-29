@@ -5,12 +5,12 @@
 <div class="description">
     <h1>Behoefte aan...</h1>
     <p>
-        Gevolgen van van of in een situatie hebben altijd gevolgen voor bepaalde behoeften.
-        Deze behoefte worden als gevolg van de situatie wel of niet vervuld.
+        Gevolgen van of in een situatie hebben altijd gevolgen voor bepaalde behoeften.
+        Deze behoeften worden als gevolg van de situatie wel of niet vervuld.
     </p>
     <p>
         Op basis van je eerder keuzes, hebben we een aantal behoeften geselecteerd.
-        Hoe belangrijk waren de onderstaande behoeften voor jou tijdens de situatie (1 = niet belangrijk, 10 = van levensbelang)?
+        Hoe belangrijk waren voor jou de onderstaande behoeften tijdens de situatie (1 = niet belangrijk, 10 = van levensbelang)?
     </p>
     <p>
         <i>

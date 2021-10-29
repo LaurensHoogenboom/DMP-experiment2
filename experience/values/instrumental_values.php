@@ -5,7 +5,7 @@
 <div class="description">
     <h1>Hoe je iets doet.</h1>
     <p>
-        In de situatie die je eerder beschreef, had je behoeften aan <span id="need-sentence"></span>. 
+        In de situatie die je eerder beschreef, had je behoefte aan <span id="need-sentence"></span>. 
     </p>
     <p>
         Afhankelijk van een situatie kiezen we voor een manier waarop wij deze behoefte vervullen.

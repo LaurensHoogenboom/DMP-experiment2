@@ -5,8 +5,8 @@
 <div class="description">
     <h1>Klaar! 🎉</h1>
     <p>
-        Ontzettend bedankt dat je deze hele test hebt willen maken. Je helpt me daar mee
-        ontzettend voor het onderzoek. 
+        Ontzettend bedankt dat je deze hele test hebt willen maken. Je helpt me daar gewerldig mee
+        voor het onderzoek. 
     </p>
     <p>
         <i>Vergeet niet om hieronder op verzenden te klikken.</i>
@@ -20,7 +20,7 @@
         </p>
 
         <p>
-            Standaard wordt alleen de beoordeling van de situatie opgeslagen.
+            Normaal gesproken wordt alleen de beoordeling van de situatie opgeslagen.
             Wel kan jouw beschrijving van de situatie van toegevoegde waarde zijn.
             Deze data kan je eventueel met ons delen, maar het hoeft niet.
         </p>

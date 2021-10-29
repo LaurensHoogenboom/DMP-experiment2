@@ -6,11 +6,11 @@
     <h1>Hi! Leuk dat je mee wil helpen met dit onderzoek. 📃</h1>
     <p>
         Op het moment ben ik voor mijn studie bezig met een onderzoekje dat o.a. draait om werkdruk, reflectie en gedrag.
-        Dit project focussed zich op mensen die na bijvoorbeeld een psycho-medisch traject weer 'op eigen benen gaan staan'.
+        Dit project focust zich op mensen die na bijvoorbeeld een psycho-medisch traject weer 'op eigen benen gaan staan'.
     </p>
     <p>
         Vaak heeft deze doelgroep maar een beperkte draagkracht, waardoor ze keuzes moeten maken in wat wel en niet kan.
-        Het maken van deze keuzes is lastig. Daarvoor moet je weten wat je écht belangrijk voor je is, waar je goed in bent en wat jouw beïnvloed bij het maken van je keuzes.
+        Het maken van deze keuzes is lastig. Daarvoor moet je weten wat je écht belangrijk voor je is, waar je goed in bent en wat jouw beïnvloedt bij het maken van je keuzes.
     </p>
 </div>
 

@@ -10,8 +10,7 @@
     </p>
     <p>
         Wanneer deze test straks vertaald wordt naar een app, is deze data super belangrijk. Terugkomende
-        dingen die druk of stress opleveren, zijn een startpunt voor reflectie. Waarom hierdoor deze druk?
-        Wat zit hier achter?
+        dingen die druk of stress opleveren, zijn een startpunt voor reflectie.
     </p>
     <p>
         Geen zorgen: de reflectie zelf zit niet in deze test.
