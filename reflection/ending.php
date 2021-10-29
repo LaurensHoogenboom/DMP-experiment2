@@ -6,7 +6,7 @@
     <h1>Klaar! 🎉</h1>
     <p>
         Ontzettend bedankt dat je deze hele test hebt willen maken. Je helpt me daar mee
-        ontzettend voor het onderzoek.
+        ontzettend voor het onderzoek. <i>Vergeet niet om hieronder op verzenden te klikken.</i>
     </p>
     <p>
         Nog een laatste vraag:
