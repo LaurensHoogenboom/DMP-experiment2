@@ -6,21 +6,25 @@
     <h1>Klaar! 🎉</h1>
     <p>
         Ontzettend bedankt dat je deze hele test hebt willen maken. Je helpt me daar mee
-        ontzettend voor het onderzoek. <i>Vergeet niet om hieronder op verzenden te klikken.</i>
+        ontzettend voor het onderzoek. 
     </p>
     <p>
-        Nog een laatste vraag:
+        <i>Vergeet niet om hieronder op verzenden te klikken.</i>
     </p>
 </div>
 
 <div class="content">
     <form>
         <p>
+            Nog een laatste vraag:
+        </p>
+
+        <p>
             Standaard wordt alleen de beoordeling van de situatie opgeslagen.
             Wel kan jouw beschrijving van de situatie van toegevoegde waarde zijn.
             Deze data kan je eventueel met ons delen, maar het hoeft niet.
         </p>
-    
+
         <div class="checkbox_wrapper">
             <input type="checkbox" id="shareData">
             <label for="shareData">Deel ook de beschrijving van de situatie.</label>
@@ -30,7 +34,7 @@
         <textarea id="feedback"></textarea>
     </form>
 
-    
+
 </div>
 
 <div class="actions">
@@ -38,7 +42,8 @@
     </div>
 
     <div class="middle">
-        <a class="button big" href="http://www.laureato.nl/" onclick="saveSubmission('#shareData', '#feedback')">Verzenden</a>
+        <a class="button big" href="http://www.laureato.nl/"
+            onclick="saveSubmission('#shareData', '#feedback')">Verzenden</a>
     </div>
 
     <div class="right">
