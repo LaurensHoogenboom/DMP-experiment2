@@ -27,7 +27,7 @@ const saveConcequenceSelection = (list) => {
     const moment = getMoment();
     let selectedConcequences = [];
 
-    $(list).find('.item').each(function() {
+    $(list).find('.item').each(function () {
         const concequenceType = $(this).attr("id");
         const selected = $(this).find("input[type='checkbox']").is(":checked");
         const concequenceIndex = concequenceTypes.findIndex(type => type.name == concequenceType);
@@ -82,7 +82,7 @@ const saveNeedSelection = (list) => {
     let selectedNeeds = [];
     let hasNeed = false;
 
-    $(list).find('.range-wrapper').each(function() {
+    $(list).find('.range-wrapper').each(function () {
         const needType = $(this).attr("id");
         const needIntensity = $(this).find("input[type='range']").val();
         const relevantNeeds = getRelevantNeeds();
@@ -93,7 +93,7 @@ const saveNeedSelection = (list) => {
 
         if (need.intensity > 1) {
             hasNeed = true;
-        } 
+        }
 
         selectedNeeds.push(need);
     });
@@ -144,28 +144,47 @@ const loadValueSelectList = (valueType, list) => {
     const selectedValues = valueType == 'terminal' ? moment.terminalValueList : moment.instrumentalValueList;
     const relevantValues = getRelevantValues(valueType);
     const relevantSelectedValues = [];
+    const totalSelectList = relevantValues;
+
+    //already selected values
 
     if (selectedValues.length > 0) {
         selectedValues.forEach(value => {
-            if (value.type == valueType) {
-                relevantSelectedValues.push(value);
-            }
+            relevantSelectedValues.push(value);
         });
     }
 
-    relevantValues.forEach(rValue => {
+    //add irrelevant but selected values
+
+    relevantSelectedValues.forEach(rsValue => {
+        let notInList = true;
+
+        relevantValues.forEach(rValue => {
+            if (rsValue.name == rValue.name) {
+                notInList = false;
+            }
+        });
+
+        if (notInList) {
+            totalSelectList.push(rsValue);
+        }
+    });
+
+    //add values to select list
+
+    totalSelectList.forEach(tsValue => {
         let selected = false;
 
         if (relevantSelectedValues.length > 0) {
             relevantSelectedValues.forEach(sValue => {
-                if (rValue.name == sValue.name) {
+                if (tsValue.name == sValue.name) {
                     selected = true;
                 }
             });
         }
 
-        description = capitalizeFirstLetter(rValue.displayName);
-        addItemToSelectList(list, description, selected, rValue.name, null, null);
+        description = capitalizeFirstLetter(tsValue.displayName);
+        addItemToSelectList(list, description, selected, tsValue.name, null, null);
     });
 }
 
@@ -202,16 +221,13 @@ const saveValuesSelection = (list, valueType) => {
         } else {
             showFormError("Selecteer op zijn minst één waarde");
         }
-        
+
         return false;
     }
 }
 
 const loadMoreValues = (valueType, list) => {
     $(list).empty();
-
-    console.log(list);
-    console.log(valueType);
 
     const relevanceClickCount = parseInt(localStorage.getItem(valueRelevanceClickCountStorageName)) + 1;
     localStorage.setItem(valueRelevanceClickCountStorageName, relevanceClickCount);

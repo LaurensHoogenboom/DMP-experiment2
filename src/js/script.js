@@ -184,3 +184,9 @@ const addItemToBlockList = (list, value) => {
 const cleanData = () => {
     localStorage.clear();
 }
+
+//load more
+
+$(document).on("click", ".load-more .button", function () {
+    $(this).addClass('hidden');
+});

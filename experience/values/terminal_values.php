@@ -46,6 +46,7 @@
 </div>
 
 <script>
+    checkIfAnyValuesOtherwiseRedirect("instrumental", "/experience/values/terminal_values.php");
     getMomentDescription("text", "#moment-description");
     loadNeedsSentence("#need-sentence");
     loadValueSelectList("terminal", "#select-terminal-values");
