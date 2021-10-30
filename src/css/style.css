@@ -199,6 +199,9 @@ main {
     .illustration {
         display: none;
     }
+    .footer {
+        display: none;
+    }
 }
 
 #form-wrapper {
