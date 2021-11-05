@@ -1,6 +1,7 @@
 {
     "name": "Stress Reflectie Test",
-    "short_name": "",
+    "short_name": "Stress Reflectie",
+    "start_url": "/",
     "icons": [
         {
             "src": "/favicon/android-chrome-192x192.png",
@@ -15,5 +16,6 @@
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "display": "standalone"
+    "display": "fullscreen",
+    "orientation": "portrait"
 }
